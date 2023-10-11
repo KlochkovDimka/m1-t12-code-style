@@ -10,9 +10,9 @@ public class DepositCalculator {
         return getRandom(amount + amount * yearRate * depositPeriod, 2);
     }
 
-    double getRandom(double value, int places) {
-        double scaLe = Math.pow(10, places);
-        return Math.round(value * scaLe) / scaLe;
+    double getRandom(double base, int degree) {
+        double expression = Math.pow(10, degree);
+        return Math.round(base * expression) / expression;
     }
 
     void doImportantJob() {
