@@ -20,16 +20,21 @@ public class DepositCalculator {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите сумму вклада в рублях:");
         int amountDeposit = scanner.nextInt();
+        
         System.out.println("Введите срок вклада в годах:");
         timeStorage = scanner.nextInt();
+        
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
         action = scanner.nextInt();
+        
         double outDoubleVar = 0;
+        
         if (action == 1) {
             outDoubleVar = CalculateSimplePercent(amountDeposit, 0.06, timeStorage);
         } else if (action == 2) {
             outDoubleVar = CalculateComplexPercent(amountDeposit, 0.06, timeStorage);
         }
+        
         System.out.println("Результат вклада: " + amountDeposit + " за " + timeStorage +
                 " лет превратятся в " + outDoubleVar);
     }
@@ -37,6 +42,4 @@ public class DepositCalculator {
     public static void main(String[] args) {
         new DepositCalculator().doImportantJob();
     }
-
-
 }
